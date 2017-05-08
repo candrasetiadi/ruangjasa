@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: May 08, 2017 at 02:54 AM
+-- Generation Time: May 08, 2017 at 05:44 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -19,75 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_guruonline`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `attendence`
---
-
-CREATE TABLE `attendence` (
-  `attendence_id` int(11) NOT NULL,
-  `student_id` int(11) DEFAULT NULL,
-  `teacher_id` int(11) DEFAULT NULL,
-  `start_date` datetime DEFAULT NULL,
-  `end_date` datetime DEFAULT NULL,
-  `location` varchar(100) DEFAULT NULL,
-  `status` enum('hadir','sakit','izin','tanpa_keterangan') DEFAULT NULL,
-  `status_reason` text,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `class_level`
---
-
-CREATE TABLE `class_level` (
-  `class_level_id` int(11) NOT NULL,
-  `class_level_name` varchar(45) DEFAULT NULL,
-  `class_level_category_id` int(11) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `class_level`
---
-
-INSERT INTO `class_level` (`class_level_id`, `class_level_name`, `class_level_category_id`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(1, 'KELAS 1', 2, '2017-03-20 12:47:02', 1, '2017-03-20 12:47:02', 1),
-(2, 'KELAS 2', 2, '2017-03-20 12:50:01', 1, '2017-03-20 12:50:01', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `class_level_category`
---
-
-CREATE TABLE `class_level_category` (
-  `class_level_category_id` int(11) NOT NULL,
-  `class_level_category_name` varchar(45) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `class_level_category`
---
-
-INSERT INTO `class_level_category` (`class_level_category_id`, `class_level_category_name`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(2, 'SMP', '2017-03-20 12:26:26', 1, '2017-03-20 12:26:26', 1),
-(3, 'SMA', '2017-03-20 01:29:11', 1, '2017-03-20 01:29:11', 1),
-(4, 'SD', '2017-03-20 01:29:16', 1, '2017-03-20 01:29:16', 1);
 
 -- --------------------------------------------------------
 
@@ -7260,52 +7191,6 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lesson`
---
-
-CREATE TABLE `lesson` (
-  `lesson_id` int(11) NOT NULL,
-  `lesson_name` varchar(50) NOT NULL,
-  `lesson_category_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `lesson`
---
-
-INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_category_id`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(1, 'dasar', 2, '2017-03-20 07:00:18', 1, '2017-03-20 07:04:38', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lesson_category`
---
-
-CREATE TABLE `lesson_category` (
-  `lesson_category_id` int(11) NOT NULL,
-  `lesson_category_name` varchar(45) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `lesson_category`
---
-
-INSERT INTO `lesson_category` (`lesson_category_id`, `lesson_category_name`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
-(2, 'MATEMATIKA', '2017-03-20 01:28:50', 1, '2017-03-20 01:28:50', 1),
-(3, 'BAHASA', '2017-03-20 01:28:58', 1, '2017-03-20 01:28:58', 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `provinces`
 --
 
@@ -7912,6 +7797,18 @@ CREATE TABLE `services_category` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `services_form_options`
+--
+
+CREATE TABLE `services_form_options` (
+  `services_form_options_id` int(11) NOT NULL,
+  `services_form_name` varchar(256) NOT NULL,
+  `services_request_form_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services_request_form`
 --
 
@@ -7919,35 +7816,7 @@ CREATE TABLE `services_request_form` (
   `services_request_form_id` int(11) NOT NULL,
   `services_request_form_name` varchar(256) DEFAULT NULL,
   `services_request_form_datatype` enum('varchar','text','int','enum') DEFAULT NULL,
-  `services_request_form_option` varchar(256) DEFAULT NULL,
   `services_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_type`
---
-
-CREATE TABLE `teacher_type` (
-  `teacher_type_id` int(11) NOT NULL,
-  `teacher_type_name` varchar(50) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_type_detail`
---
-
-CREATE TABLE `teacher_type_detail` (
-  `teacher_type_detail_id` int(11) NOT NULL,
-  `teacher_type_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -59601,24 +59470,6 @@ INSERT INTO `villages` (`id`, `district_id`, `name`) VALUES
 --
 
 --
--- Indexes for table `attendence`
---
-ALTER TABLE `attendence`
-  ADD PRIMARY KEY (`attendence_id`);
-
---
--- Indexes for table `class_level`
---
-ALTER TABLE `class_level`
-  ADD PRIMARY KEY (`class_level_id`);
-
---
--- Indexes for table `class_level_category`
---
-ALTER TABLE `class_level_category`
-  ADD PRIMARY KEY (`class_level_category_id`);
-
---
 -- Indexes for table `company_award`
 --
 ALTER TABLE `company_award`
@@ -59642,18 +59493,6 @@ ALTER TABLE `company_services_portfolio`
 ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `districts_id_index` (`regency_id`);
-
---
--- Indexes for table `lesson`
---
-ALTER TABLE `lesson`
-  ADD PRIMARY KEY (`lesson_id`);
-
---
--- Indexes for table `lesson_category`
---
-ALTER TABLE `lesson_category`
-  ADD PRIMARY KEY (`lesson_category_id`);
 
 --
 -- Indexes for table `provinces`
@@ -59681,22 +59520,16 @@ ALTER TABLE `services_category`
   ADD PRIMARY KEY (`services_category_id`);
 
 --
+-- Indexes for table `services_form_options`
+--
+ALTER TABLE `services_form_options`
+  ADD PRIMARY KEY (`services_form_options_id`);
+
+--
 -- Indexes for table `services_request_form`
 --
 ALTER TABLE `services_request_form`
   ADD PRIMARY KEY (`services_request_form_id`);
-
---
--- Indexes for table `teacher_type`
---
-ALTER TABLE `teacher_type`
-  ADD PRIMARY KEY (`teacher_type_id`);
-
---
--- Indexes for table `teacher_type_detail`
---
-ALTER TABLE `teacher_type_detail`
-  ADD PRIMARY KEY (`teacher_type_detail_id`);
 
 --
 -- Indexes for table `users`
@@ -59716,21 +59549,6 @@ ALTER TABLE `villages`
 --
 
 --
--- AUTO_INCREMENT for table `attendence`
---
-ALTER TABLE `attendence`
-  MODIFY `attendence_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `class_level`
---
-ALTER TABLE `class_level`
-  MODIFY `class_level_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `class_level_category`
---
-ALTER TABLE `class_level_category`
-  MODIFY `class_level_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- AUTO_INCREMENT for table `company_award`
 --
 ALTER TABLE `company_award`
@@ -59746,16 +59564,6 @@ ALTER TABLE `company_profile`
 ALTER TABLE `company_services_portfolio`
   MODIFY `services_portfolio_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `lesson`
---
-ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `lesson_category`
---
-ALTER TABLE `lesson_category`
-  MODIFY `lesson_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
@@ -59766,20 +59574,15 @@ ALTER TABLE `services`
 ALTER TABLE `services_category`
   MODIFY `services_category_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `services_form_options`
+--
+ALTER TABLE `services_form_options`
+  MODIFY `services_form_options_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `services_request_form`
 --
 ALTER TABLE `services_request_form`
   MODIFY `services_request_form_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `teacher_type`
---
-ALTER TABLE `teacher_type`
-  MODIFY `teacher_type_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `teacher_type_detail`
---
-ALTER TABLE `teacher_type_detail`
-  MODIFY `teacher_type_detail_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
