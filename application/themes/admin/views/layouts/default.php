@@ -65,7 +65,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{base_url()}">Guru Online</a>
+                <a class="navbar-brand" href="{base_url()}">Ruangjasa</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
