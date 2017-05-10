@@ -120,24 +120,20 @@ class MY_Controller extends CI_Controller {
 	function getMenus()
 	{
 		$menus = array(
-			// 'class_level_category'=>(object)array(
-			// 	'title'=>'  Level Category',
-			// 	'class'=>'fa-ticket'
-			// ),
-			// 'class_level'=>(object)array(
-			// 	'title'=>'  Level',
-			// 	'class'=>'fa-signal'
-			// ),
-			// 'lesson_category'=>(object)array(
-			// 	'title'=>'  Lesson Category',
-			// 	'class'=>'fa-ticket'
-			// ),
 			'services_category'=>(object)array(
 				'title'=>'  Kategori Jasa',
 				'class'=>'fa-ticket'
 			),
 			'services'=>(object)array(
 				'title'=>'  Jasa',
+				'class'=>'fa-ticket'
+			),
+			'services/request_form'=>(object)array(
+				'title'=>'  Form Request Jasa',
+				'class'=>'fa-ticket'
+			),			
+			'services/request_form_options'=>(object)array(
+				'title'=>'  Form Request Options',
 				'class'=>'fa-ticket'
 			),
 			'users'=>(object)array(
