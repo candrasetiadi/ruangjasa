@@ -40,7 +40,13 @@
 								<div class="row form-group">
 									<div class="col-md-4">
 										<!-- <label for="fname">First Name</label> -->
-										<input type="text" id="fname" class="form-control" placeholder="Layanan apa yang anda butuhkan">
+										<!-- <input type="text" id="fname" class="form-control" placeholder="Layanan apa yang anda butuhkan"> -->
+										<select id="services_id" name="services_id" class="form-control" placeholder="Layanan apa yang anda butuhkan">
+											<option value=""> </option>
+											{foreach $services k val}
+												<option value="{$val->services_id}"> {$val->services_name} </option>
+											{/foreach}
+										</select>
 									</div>
 									<div class="col-md-4">
 										<!-- <label for="lname">Last Name</label> -->

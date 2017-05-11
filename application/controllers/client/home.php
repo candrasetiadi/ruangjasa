@@ -3,7 +3,11 @@
 class Home extends MY_Controller {
 	public function index()
 	{
-		$this->Render('home','home','Home');
+		$this->load->model('servicesdb');
+
+		$data['services'] = $this->servicesdb->get_services();
+
+		$this->Render('home','home','Home', $data);
 	}
 
 	public function process()
