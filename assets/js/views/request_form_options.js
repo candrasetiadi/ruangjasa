@@ -42,7 +42,7 @@ functions.push(function(){
 	$("#data").on('click','.btnDelete',function(){
 		var _t = $(this);
 		var yes = function(){
-			$.postAjax(base_url + "services/delete",{data:$(_t).attr('data')},
+			$.postAjax(base_url + "services/delete_request_form_options",{data:$(_t).attr('data')},
 				function(){
 					dt.fnReloadAjax();
 				}

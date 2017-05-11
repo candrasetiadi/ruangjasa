@@ -56,6 +56,8 @@ class ServicesDB extends MY_Model {
 		$this->db->update('services');
 	}
 
+	/*===========================CATEGORY==============*/
+
 	function insert_category($post) {
 
 		$this->db->set('services_category_name',$post['services_category_name']);
@@ -155,6 +157,49 @@ class ServicesDB extends MY_Model {
 
 		$this->db->where('services_request_form_id',$services_request_form_id);
 		$res = $this->db->get('services_request_form');
+		if($res->num_rows() > 0)
+			return $res->row();
+		else
+			return null;
+	}
+
+	/*================*/
+
+	function insert_request_form_options($post) {
+
+		$this->db->set('services_request_form_id',$post['services_request_form_id']);
+		$this->db->set('services_form_options_name',$post['services_form_options_name']);
+		$this->db->insert('services_form_options');
+		
+	}
+
+	function update_request_form_options($post) {
+
+		$this->db->where('services_form_options_id',$post['services_form_options_id']);
+		$this->db->set('services_request_form_id',$post['services_request_form_id']);
+		$this->db->set('services_form_options_name',$post['services_form_options_name']);
+		$this->db->update('services_form_options');
+	}
+
+	function delete_request_form_options($services_form_options_id) {
+
+		$this->db->where('services_form_options_id',$services_form_options_id);
+		$this->db->update('services_form_options');
+	}
+
+	function get_request_form_options() {
+
+		$res = $this->db->get('services_form_options');
+		if($res->num_rows() > 0)
+			return $res->result();
+		else
+			return array();
+	}
+
+	function get_request_form_options_by_id($services_form_options_id) {
+
+		$this->db->where('services_form_options_id',$services_form_options_id);
+		$res = $this->db->get('services_form_options');
 		if($res->num_rows() > 0)
 			return $res->row();
 		else

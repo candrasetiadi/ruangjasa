@@ -103,8 +103,8 @@
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 fh5co-widget">
-                        <h4>About Learning</h4>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <h4>About Ruangjasa</h4>
+                        <p>Ruangjasa adalah tempat dimana kamu bisa menjadi penyedia jasa dan mencari berbagai macam jasa untuk kebutuhan sehari-hari.</p>
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
                         <h4>Learning</h4>
@@ -152,10 +152,10 @@
 
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
-                        <p>
+                        <!-- <p>
                             <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
                             <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-                        </p>
+                        </p> -->
                         <p>
                             <ul class="fh5co-social-icons">
                                 <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -202,6 +202,7 @@
         var base_url = '{base_url()}';
     </script>
     <script src="{base_url()}assets/js/functions.js"></script>
-    <script src="{base_url()}assets/js/global.js"></script>
+    <!-- <script src="{base_url()}assets/js/global.js"></script> -->
+
 </body>
 </html>

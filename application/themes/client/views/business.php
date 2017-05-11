@@ -56,18 +56,21 @@
 								<label for="category">Kategori Jasa</label>
 								<select id="category" name="category" class="form-control" placeholder="">
 									<option value=""> </option>
+									{foreach $category k val}
+										<option value="{$val->services_category_id}"> {$val->services_category_name} </option>
+									{/foreach}
 								</select>
 							</div>
 						</div>
 
-						<div class="row form-group">
+						<!-- <div class="row form-group">
 							<div class="col-md-12">
 								<label for="subcategory">Sub Kategori Jasa</label>
 								<select id="subcategory" name="subcategory" class="form-control" placeholder="">
 									<option value=""> </option>
 								</select>
 							</div>
-						</div>
+						</div> -->
 
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -93,6 +96,64 @@
 							</div>
 						</div>
 
+						<hr>
+						<h3>Informasi Kontak</h3>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="user_email">Email</label>
+								<input type="email" id="user_email" name="user_email" class="form-control" placeholder="">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="user_phone">No. Telepon</label>
+								<input type="text" id="user_phone" name="user_phone" class="form-control" placeholder="">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="user_fax">Fax</label>
+								<input type="text" id="user_fax" name="user_fax" class="form-control" placeholder="">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="user_address">Alamat Lengkap</label>
+								<textarea name="user_address" id="user_address" cols="30" rows="10" class="form-control" placeholder="Jelaskan ditel pekerjaan yang anda lakukan"></textarea>
+							</div>
+						</div>
+
+						<hr>
+						<h3>Jangkauan Layanan</h3>
+						<p>Pilih lokasi di mana Anda beroperasi. Semakin spesifik lokasi Anda, semakin tepat customer yang Anda dapatkan.</p>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="business_province">Provinsi</label>
+								<select id="business_province" name="business_province" class="form-control" placeholder="">
+									<option value=""> </option>
+									{foreach $province k val}
+										<option value="{$val->id}"> {$val->name} </option>
+									{/foreach}
+								</select>
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="business_city">Kota / Kabupaten</label>
+								<select id="business_city" name="business_city" class="form-control" placeholder="">
+									<option value=""> </option>
+									<!-- {foreach $category k val}
+										<option value="{$val->services_category_id}"> {$val->services_category_name} </option>
+									{/foreach} -->
+								</select>
+							</div>
+						</div>
+
 						<div class="form-group">
 							<input type="submit" value="Send Message" class="btn btn-primary">
 						</div>
@@ -103,7 +164,7 @@
 			
 		</div>
 	</div>
-	<div id="fh5co-started" style="background-image:url(images/img_bg_2.jpg);">
+	<!-- <div id="fh5co-started" style="background-image:url(images/img_bg_2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -118,4 +179,33 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+	<script src="{base_url()}assets/js/jquery.js"></script>
+	<script type="text/javascript">
+        
+        $(document).ready(function(){
+            
+        });
+
+        $(document).on('change', '#business_province', function(){
+			var user_province = $(this).val();
+
+			$.postAjax(base_url + "business/get_city", {
+				user_province:user_province
+			},
+				function(result){
+					$.each(result.data, function(idx, val){
+						$("#user_citybusiness_city").append($("<option></option>")
+				            .attr("value", val.id)
+				            .text(val.name)
+				        );
+				        $("#business_city").trigger("chosen:updated");
+					});
+				}
+			);
+
+		});
+
+
+    </script>

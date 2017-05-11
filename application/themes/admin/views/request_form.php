@@ -62,7 +62,7 @@ functions.push(function(){
 	    	<h2 class="modal-title">Add Request Form</h2>
 	</div>
 	<div class="modal-body">
-	    <form role="form" class="parsley-validate ajax" action="{site_url('admin/services/process')}" done="confirmAgain()" clearform>
+	    <form role="form" class="parsley-validate ajax" action="{site_url('admin/services/process_request_form')}" done="confirmAgain()" clearform>
 				<input type="hidden" name="id" value="new" />
 				<input type="hidden" name="services_request_form_id" value="" />
 				<div class="row">

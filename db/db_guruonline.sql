@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: May 08, 2017 at 05:44 AM
+-- Generation Time: May 11, 2017 at 04:33 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -7783,6 +7783,14 @@ CREATE TABLE `services` (
   `services_category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`services_id`, `services_name`, `services_category_id`) VALUES
+(1, 'Catering', 2),
+(2, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -7794,6 +7802,19 @@ CREATE TABLE `services_category` (
   `services_category_name` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `services_category`
+--
+
+INSERT INTO `services_category` (`services_category_id`, `services_category_name`) VALUES
+(1, 'Event'),
+(2, 'Food'),
+(3, 'Jasa Rumah Tangga'),
+(4, 'Jasa Servis dan Lainnya'),
+(5, 'Lesson'),
+(6, 'Photography'),
+(7, 'Other');
+
 -- --------------------------------------------------------
 
 --
@@ -7802,9 +7823,17 @@ CREATE TABLE `services_category` (
 
 CREATE TABLE `services_form_options` (
   `services_form_options_id` int(11) NOT NULL,
-  `services_form_name` varchar(256) NOT NULL,
+  `services_form_options_name` varchar(256) NOT NULL,
   `services_request_form_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `services_form_options`
+--
+
+INSERT INTO `services_form_options` (`services_form_options_id`, `services_form_options_name`, `services_request_form_id`) VALUES
+(1, 'Chinese Food', 1),
+(2, 'italian food', 0);
 
 -- --------------------------------------------------------
 
@@ -7818,6 +7847,13 @@ CREATE TABLE `services_request_form` (
   `services_request_form_datatype` enum('varchar','text','int','enum') DEFAULT NULL,
   `services_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `services_request_form`
+--
+
+INSERT INTO `services_request_form` (`services_request_form_id`, `services_request_form_name`, `services_request_form_datatype`, `services_id`) VALUES
+(1, 'Jenis makanan apa yang anda sukai', 'enum', 1);
 
 -- --------------------------------------------------------
 
@@ -7855,7 +7891,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_address`, `user_district_id`, `user_city_id`, `user_province_id`, `user_country_id`, `user_avatar_name`, `user_profession`, `user_type`, `user_status`, `user_gender`, `is_parent`, `user_level_id`, `user_institution`, `user_phone`, `last_login`, `last_logout`, `created_at`) VALUES
 (1, 'candra', 'candrasetiadiwahyu@gmail.com', '0750aca3c202f6dc6e34123569d7be8a', '', 0, 0, 0, 0, '', '', 'admin', 'active', '', 0, 0, '', '', '2017-03-27 02:28:31', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'admin', 'admin@local.net', '0750aca3c202f6dc6e34123569d7be8a', 'jakarta', 3171070, 3171, 31, 0, '', 'admin', 'admin', 'active', 'men', 0, 0, '', '', '2017-05-07 21:25:30', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(2, 'admin', 'admin@local.net', '0750aca3c202f6dc6e34123569d7be8a', 'jakarta', 3171070, 3171, 31, 0, '', 'admin', 'admin', 'active', 'men', 0, 0, '', '', '2017-05-10 08:48:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -59567,22 +59603,22 @@ ALTER TABLE `company_services_portfolio`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services_category`
 --
 ALTER TABLE `services_category`
-  MODIFY `services_category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `services_category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `services_form_options`
 --
 ALTER TABLE `services_form_options`
-  MODIFY `services_form_options_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `services_form_options_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `services_request_form`
 --
 ALTER TABLE `services_request_form`
-  MODIFY `services_request_form_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `services_request_form_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
