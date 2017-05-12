@@ -70,7 +70,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$fullname} <b class="caret"></b></a>
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$fullname} <b class="caret"></b></a>-->
                     <ul class="dropdown-menu">
                         <li>
                             <a href="{site_url('admin/profile')}"><i class="fa fa-fw fa-user"></i> Profile</a>

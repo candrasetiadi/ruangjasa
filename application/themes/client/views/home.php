@@ -25,14 +25,20 @@
 </style>
 <!-- Breadcrumb End -->
 
+<link rel="stylesheet" href="{base_url()}assets/client/css/custom.css">
+
 	<!-- Page Start -->
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('{base_url()}assets/client/images/img_bg_1.jpg');" data-stellar-background-ratio="0.5">
+    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('{base_url()}assets/client/images/jasa/headline.jpg');background-size:cover;" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-md-8 col-md-offset-2 text-center search_box">
+					
 					<div class="display-t">
+
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+						 <h1>Segala Kebutuhan Anda, Kami Ada..</h1>
 							<!-- <h1>The Art of Teaching is the Art of Assisting Discovery</h1>
 							<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
 							<p><a class="btn btn-primary btn-lg btn-learn" href="#">Take A Course</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p> -->
@@ -138,37 +144,38 @@
 		</div>
 		<div class="container-fluid proj-bottom">
 			<div class="row">
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-					<a href="#"><img src="{base_url()}assets/client/images/jasa/serviceac.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive top-category">
+				<div class="col-md-4 col-sm-12 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="#">
+						<img src="{base_url()}assets/client/images/jasa/serviceac.jpg" style="background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));background-size:cover;"   alt="" class="img-responsive top-category">
 						<h3>Service AC</h3>
 						<span>Pesan Sekarang</span>
 					</a>
 				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+				<div class="col-md-4 col-sm-12 fh5co-project animate-box" data-animate-effect="fadeIn">
 					<a href="#"><img src="{base_url()}assets/client/images/jasa/kontraktor.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive top-category">
 						<h3>Kontraktor Bangunan</h3>
 						<span>Pesan Sekarang</span>
 					</a>
 				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+				<div class="col-md-4 col-sm-12 fh5co-project animate-box" data-animate-effect="fadeIn">
 					<a href="#"><img src="{base_url()}assets/client/images/jasa/interior.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive top-category">
 						<h3>Interior Design</h3>
 						<span>Pesan Sekarang</span>
 					</a>
 				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+				<div class="col-md-4 col-sm-12 fh5co-project animate-box" data-animate-effect="fadeIn">
 					<a href="#"><img src="{base_url()}assets/client/images/jasa/tukang.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive top-category">
 						<h3>Jasa Pertukangan</h3>
 						<span>Pesan Sekarang</span>
 					</a>
 				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+				<div class="col-md-4 col-sm-12 fh5co-project animate-box" data-animate-effect="fadeIn">
 					<a href="#"><img src="{base_url()}assets/client/images/jasa/perkakas.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive top-category">
 						<h3>Service Perkakas</h3>
 						<span>Pesan Sekarang</span>
 					</a>
 				</div>
-				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+				<div class="col-md-4 col-sm-12 fh5co-project animate-box" data-animate-effect="fadeIn">
 					<a href="#"><img src="{base_url()}assets/client/images/jasa/pindahan.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive top-category">
 						<h3>Jasa Pindahan</h3>
 						<span>Pesan Sekarang</span>
@@ -176,6 +183,7 @@
 				</div>
 			</div>
 		</div>
+		<?php /*
 		<div class="container">
 			<div class="row">
 				<div class="features">
@@ -197,6 +205,7 @@
 				</div>
 			</div>
 		</div>
+		*/ ?>
 	</div>
 
 	<div id="fh5co-testimonial" class="fh5co-bg-section">
@@ -254,26 +263,28 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Rekomendasi Penyedia Jasa Pilihan Customer Jasaku.com </h2>
+					<h2>Rekomendasi Penyedia Jasa Pilihan Customer Ruangjasa.com </h2>
 					<!-- <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p> -->
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="">
+
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="{base_url()}assets/client/images/jasa/serviceac.jpg" alt=""></a>
+						<a href="#"><img class="img-responsive" src="{base_url()}assets/client/images/jasa/services.jpg" alt=""></a>
 						<div class="blog-text">
-							<h3><a href=""#>Kang Iday menggunakan Jasa Service AC</a></h3>
+							<h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
 							<span class="posted_on">Nov. 15th</span>
-							<!-- <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span> -->
-							<p>Pelayanan baik dan AC saya terawat dengan baik. harga nya pun sangat terjangkau</p>
+							<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 							<a href="#" class="btn btn-primary">Read More</a>
 						</div> 
 					</div>
 				</div>
+
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="{base_url()}assets/client/images/project-2.jpg" alt=""></a>
+						<a href="#"><img class="img-responsive" src="{base_url()}assets/client/images/jasa/services1.png" alt=""></a>
 						<div class="blog-text">
 							<h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
 							<span class="posted_on">Nov. 15th</span>
@@ -285,7 +296,7 @@
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="{base_url()}assets/client/images/project-3.jpg" alt=""></a>
+						<a href="#"><img class="img-responsive" src="{base_url()}assets/client/images/jasa/services3.jpg" alt=""></a>
 						<div class="blog-text">
 							<h3><a href=""#>45 Minimal Workspace Rooms for Web Savvys</a></h3>
 							<span class="posted_on">Nov. 15th</span>

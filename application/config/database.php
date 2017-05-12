@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'kenapabisa';
-$db['default']['database'] = 'db_guruonline';
+$db['default']['password'] = '';
+$db['default']['database'] = 'ruangjasa';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
