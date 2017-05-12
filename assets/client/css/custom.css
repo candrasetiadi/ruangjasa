@@ -19,9 +19,10 @@
 }
 
 .proj-bottom {
-    padding-bottom: 4em;
-    width: 1000px;
-    /*position: absolute;*/
+    padding-bottom: 0px;
+    padding-top: 0px;
+    /*width: 1000px;*/
+    position: absolute;
 
 }
 
@@ -33,13 +34,15 @@
 .fh5co-project > a img{
     max-height: 100%;
     max-width: 100%;
-    height: 180px;
+    height: 140px;
     /*filter: grayscale(25%);*/
+     /*background-color: aliceblue;*/
 }
 
 .fh5co-project > a h3 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 300;
+    text-shadow: 1px 1px 3px #000, 1px 1px 2px black;
     
 }
 
@@ -49,7 +52,7 @@
 }
 
 #fh5co-explore, #fh5co-pricing, #fh5co-testimonial, #fh5co-started, #fh5co-project, #fh5co-blog, #fh5co-contact, #fh5co-footer {
-    padding: 2em 0;
+    padding: 8em 0;
     clear: both;
 }
 
@@ -59,4 +62,16 @@
     line-height: 1.3;
     font-weight: 300;
     text-align: left;
+}
+
+#fh5co-explore{
+    background:linear-gradient(rgb(234,146,21), rgb(234,146,21));
+    /*background-color: */
+    
+}
+
+#fh5co-testimonial{
+    background:linear-gradient(rgb(234,146,21), rgb(234,146,21));
+    /*background-color: */
+    
 }
